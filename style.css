@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Interbold', sans-serif;
+  }
+  
+  body {
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .timer {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  input[type="email"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #6425FE;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #7c4dff;
+  }
+  
+  button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+  }
+  
+  /* Footer Section */
+  .footer {
+    margin-top: 3rem;
+    text-align: left;
+  }
+  
+  .footer h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer p {
+    color: #aaa;
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-cards {
+    display: flex;
+    justify-content: space-between; /* evenly space them */
+    align-items: stretch;
+    gap: 1rem;
+    flex-wrap: nowrap; /* prevent line breaks */
+    overflow-x: auto; /* allow horizontal scroll if too many */
+  }
+  
+  
+  .footer-card {
+    background-color: #000;
+    flex: 1;
+    border-radius: 10px;
+    padding: 0.6rem 0.4rem;
+    text-align: center;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  
+
+  .footer-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .footer-card p {
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+  
+  .error-icon {
+    font-size: 3rem;
+    color: white;
+    background: #6425FE;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .error-text {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 1.5rem;
+    }
+  
+    h1 {
+      font-size: 1.2rem;
+    }
+  
+    .footer-card {
+      flex: 1 1 100%;
+    }
+  }
+  

