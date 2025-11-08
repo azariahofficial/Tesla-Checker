@@ -1,5 +1,5 @@
 *{
-  margin: 0;
+  margin: 1;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Interbold', sans-serif;
@@ -9,7 +9,7 @@ body {
   background-color: #111;
   color: white;
   /* Removed flex centering to allow vertical stacking */
-  min-height: 100vh;
+  min-height: 110vh;
   padding: 2rem 1rem; /* allows scroll if needed */
   margin: 0;
 }
@@ -22,7 +22,7 @@ body {
   padding: 2rem;
   text-align: center;
   transition: opacity 1s ease; /* Fade in main content */
-  margin: 1rem auto; /* stack below header */
+  margin: 4rem auto; /* stack below header */
 }
 
 .timer {
@@ -69,12 +69,12 @@ button:disabled {
 
 /* Footer Section */
 .footer {
-  margin-top: 3rem;
+  margin-top: 5rem;
   text-align: left;
 }
 
 .footer h3 {
-  font-size: 1rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
@@ -197,7 +197,7 @@ button:disabled {
 }
 
 .checker-text h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: white;
   margin-bottom: 0.8rem;
 }
@@ -205,5 +205,5 @@ button:disabled {
 .checker-text p {
   font-size: 1rem;
   color: white;
-  line-height: 1.5;
+  line-height: 1.3;
 }
