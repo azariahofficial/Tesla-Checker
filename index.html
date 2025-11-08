@@ -7,7 +7,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <!-- 🔹 Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <p>Checking eligibility...</p>
+  </div>
+
+  <!-- 🔹 Main Container (hidden initially) -->
+  <div class="container" style="opacity:0;">
     <div class="timer" id="timer">Time Remaining: 30 Days</div>
 
     <h1>Tesla Eligibility Checker</h1>
@@ -16,37 +23,36 @@
     <button id="verifyBtn">Verify Eligibility Status</button>
 
     <script>
-        const emailInput = document.getElementById('email');       // matches HTML input id
-        const submitBtn = document.getElementById('verifyBtn');    // matches HTML button id
-      
-        // Function to validate email
-        function isValidEmail(email) {
-          const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return regex.test(email);
+      const emailInput = document.getElementById('email');       // matches HTML input id
+      const submitBtn = document.getElementById('verifyBtn');    // matches HTML button id
+    
+      // Function to validate email
+      function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+      }
+    
+      // Enable or disable button based on email validity
+      emailInput.addEventListener('input', () => {
+        if (isValidEmail(emailInput.value)) {
+          submitBtn.disabled = false;
+        } else {
+          submitBtn.disabled = true;
         }
-      
-        // Enable or disable button based on email validity
-        emailInput.addEventListener('input', () => {
-          if (isValidEmail(emailInput.value)) {
-            submitBtn.disabled = false;
-          } else {
-            submitBtn.disabled = true;
-          }
-        });
-      
-        // Optional: Prevent navigation if invalid
-        submitBtn.addEventListener('click', (e) => {
-          if (!isValidEmail(emailInput.value)) {
-            e.preventDefault();
-            alert("Please enter a valid email address.");
-          } else {
-            // Redirect to next page if valid
-            window.location.href = 'nextpage.html'; // replace with your next screen
-          }
-        });
-      </script>
-      
-
+      });
+    
+      // Optional: Prevent navigation if invalid
+      submitBtn.addEventListener('click', (e) => {
+        if (!isValidEmail(emailInput.value)) {
+          e.preventDefault();
+          alert("Please enter a valid email address.");
+        } else {
+          // Redirect to next page if valid
+          window.location.href = 'nextpage.html'; // replace with your next screen
+        }
+      });
+    </script>
+    
     <!-- Footer Section -->
     <div class="footer">
       <h3>Questions?</h3>
@@ -67,5 +73,24 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- 🔹 Loading Screen Script -->
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const loader = document.getElementById("loading-screen");
+        const main = document.querySelector(".container");
+
+        // Fade out loader
+        loader.style.opacity = 0;
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 1000); // match transition duration
+
+        // Fade in main content
+        main.style.opacity = 1;
+      }, 2000); // loader shows for 2 seconds
+    });
+  </script>
 </body>
 </html>
